@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kileleshwa Super Shine — Detailing Centre</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #9B0C22;
+    --red-light: #FF1A3C;
+    --gold: #B8963E;
+    --near-black: #0A0A0A;
+    --dark: #111111;
+    --dark-2: #1A1A1A;
+    --dark-3: #222222;
+    --border: rgba(255,255,255,0.08);
+    --border-red: rgba(200,16,46,0.3);
+    --text: #F5F0EB;
+    --muted: rgba(245,240,235,0.5);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--near-black);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .logo-badge {
+    width: 36px; height: 36px; background: var(--red);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 500; font-family: var(--sans); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 0.85rem;
+    letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--red); color: #fff; text-decoration: none;
+    padding: 0.6rem 1.4rem; font-size: 0.85rem; letter-spacing: 0.06em;
+    text-transform: uppercase; font-weight: 500; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--red-dark); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    background: var(--near-black);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A0508 40%, #0A0A0A 100%);
+  }
+  .hero-lines {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px
+    ), repeating-linear-gradient(
+      90deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px
+    );
+  }
+  .hero-accent {
+    position: absolute; top: 0; right: 0;
+    width: 50vw; height: 100vh;
+    background: radial-gradient(ellipse at 80% 50%, rgba(200,16,46,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2; text-align: center; padding: 2rem;
+    max-width: 860px;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 2rem;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; flex: 1; height: 1px; width: 40px; background: var(--red); opacity: 0.5;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300; line-height: 1.05; margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--red);
+  }
+  .hero-sub {
+    font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 3rem;
+    line-height: 1.7; letter-spacing: 0.01em;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--red); color: #fff; padding: 0.9rem 2.2rem;
+    text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 500; transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.2); color: var(--text);
+    padding: 0.9rem 2.2rem; text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 400; transition: border-color 0.2s, color 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--muted), transparent); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* STATS */
+  .stats {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    background: var(--dark-2);
+  }
+  .stat {
+    padding: 2.5rem 2rem; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--serif); font-size: 3rem; font-weight: 300;
+    color: var(--red); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-top: 0.5rem;
+  }
+
+  /* SECTION COMMON */
+  section { padding: 7rem 3rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header { margin-bottom: 4rem; }
+  .section-tag {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); font-weight: 500; margin-bottom: 1rem; display: block;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300; line-height: 1.15; color: var(--text);
+  }
+  .section-title em { font-style: italic; color: var(--red); }
+  .section-desc { color: var(--muted); max-width: 520px; margin-top: 1rem; line-height: 1.7; }
+
+  /* SERVICES */
+  #services { background: var(--dark); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .service-card {
+    background: var(--dark-2); padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+  .service-card:hover { background: var(--dark-3); }
+  .service-icon {
+    font-size: 1.8rem; margin-bottom: 1.5rem; display: block;
+  }
+  .service-name {
+    font-family: var(--serif); font-size: 1.4rem; font-weight: 400;
+    margin-bottom: 0.75rem; color: var(--text);
+  }
+  .service-desc {
+    font-size: 0.875rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem;
+  }
+  .service-price {
+    display: flex; align-items: baseline; gap: 0.4rem;
+  }
+  .price-from { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  .price-val {
+    font-family: var(--serif); font-size: 1.6rem; color: var(--red); font-weight: 300;
+  }
+  .price-unit { font-size: 0.75rem; color: var(--muted); }
+
+  /* PRICING TABLE */
+  #pricing { background: var(--near-black); }
+  .pricing-table {
+    width: 100%; border-collapse: collapse;
+    border: 1px solid var(--border);
+  }
+  .pricing-table thead th {
+    background: var(--red); padding: 1rem 1.5rem;
+    text-align: left; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 500; color: #fff;
+  }
+  .pricing-table thead th:not(:first-child) { text-align: right; }
+  .pricing-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .pricing-table tbody tr:hover { background: var(--dark-2); }
+  .pricing-table td {
+    padding: 1rem 1.5rem; font-size: 0.9rem; color: var(--muted);
+  }
+  .pricing-table td:first-child { color: var(--text); font-weight: 400; }
+  .pricing-table td:not(:first-child) { text-align: right; font-family: var(--serif); font-size: 1rem; }
+  .pricing-cat {
+    background: var(--dark-3);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); font-weight: 500;
+  }
+  .price-ksh { color: var(--text); }
+  .na { color: var(--border); }
+
+  /* BOOKING / AI */
+  #booking { background: var(--dark-2); }
+  .booking-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .booking-form-wrap {
+    background: var(--dark-3); border: 1px solid var(--border);
+    padding: 2.5rem;
+  }
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label {
+    display: block; font-size: 0.75rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: var(--dark); border: 1px solid var(--border);
+    color: var(--text); padding: 0.85rem 1rem; font-family: var(--sans);
+    font-size: 0.9rem; outline: none; transition: border-color 0.2s;
+    appearance: none; -webkit-appearance: none;
+  }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(245,240,235,0.4)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  .form-group select option { background: var(--dark-2); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--red);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .submit-btn {
+    width: 100%; background: var(--red); color: #fff;
+    border: none; padding: 1rem; font-family: var(--sans);
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 500; cursor: pointer; transition: background 0.2s;
+  }
+  .submit-btn:hover:not(:disabled) { background: var(--red-dark); }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* AI CHAT */
+  .ai-panel {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .ai-header {
+    background: var(--dark-3); border: 1px solid var(--border);
+    border-bottom: none; padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ai-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--red);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .ai-title { font-size: 0.85rem; font-weight: 500; }
+  .ai-sub { font-size: 0.75rem; color: var(--muted); }
+  .ai-messages {
+    background: var(--dark); border: 1px solid var(--border);
+    border-bottom: none; padding: 1.5rem;
+    min-height: 320px; max-height: 320px; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .msg { display: flex; gap: 10px; align-items: flex-start; }
+  .msg.user { flex-direction: row-reverse; }
+  .msg-avatar {
+    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em;
+  }
+  .msg.bot .msg-avatar { background: var(--red); color: #fff; }
+  .msg.user .msg-avatar { background: var(--dark-3); color: var(--muted); border: 1px solid var(--border); }
+  .msg-bubble {
+    background: var(--dark-2); border: 1px solid var(--border);
+    padding: 0.75rem 1rem; font-size: 0.875rem; line-height: 1.6;
+    color: var(--text); max-width: 80%; border-radius: 0;
+  }
+  .msg.user .msg-bubble { background: var(--dark-3); }
+  .ai-input-row {
+    display: flex; border: 1px solid var(--border);
+  }
+  .ai-input {
+    flex: 1; background: var(--dark-2); border: none;
+    color: var(--text); padding: 1rem; font-family: var(--sans);
+    font-size: 0.875rem; outline: none;
+  }
+  .ai-input::placeholder { color: var(--muted); }
+  .ai-send {
+    background: var(--red); border: none; color: #fff;
+    padding: 0 1.25rem; cursor: pointer; font-size: 1rem;
+    transition: background 0.2s; flex-shrink: 0;
+  }
+  .ai-send:hover { background: var(--red-dark); }
+  .ai-send:disabled { opacity: 0.4; cursor: not-allowed; }
+  .typing-indicator span {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--muted); border-radius: 50%; margin: 0 2px;
+    animation: typing 1.2s infinite;
+  }
+  .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+
+  /* GALLERY */
+  #gallery { background: var(--dark); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1px; background: var(--border);
+  }
+  .gallery-item {
+    background: var(--dark-3); aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .gallery-item:first-child { grid-column: span 2; aspect-ratio: 16/7; }
+  .gallery-photo {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease; display: block;
+  }
+  .gallery-item:hover .gallery-photo { transform: scale(1.04); }
+  .gallery-placeholder {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    background: var(--dark-3); color: var(--muted); font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase; flex-direction: column; gap: 8px;
+  }
+  .gallery-placeholder-icon { font-size: 2rem; opacity: 0.2; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--near-black); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .testimonial {
+    background: var(--dark-2); border: 1px solid var(--border);
+    padding: 2rem; transition: border-color 0.3s;
+  }
+  .testimonial:hover { border-color: var(--border-red); }
+  .testimonial-stars { color: var(--gold); margin-bottom: 1rem; letter-spacing: 2px; }
+  .testimonial-text {
+    font-family: var(--serif); font-size: 1.1rem; font-style: italic;
+    font-weight: 300; line-height: 1.65; color: var(--text); margin-bottom: 1.5rem;
+  }
+  .testimonial-author { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .testimonial-author strong { color: var(--text); display: block; }
+
+  /* LOCATION */
+  #location { background: var(--dark-2); }
+  .location-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .location-info { }
+  .location-detail {
+    display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start;
+  }
+  .location-icon { font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+  .location-detail-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .location-detail-val { font-size: 0.95rem; color: var(--text); margin-top: 0.25rem; }
+  .map-placeholder {
+    background: var(--dark-3); border: 1px solid var(--border);
+    height: 380px; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 1rem; color: var(--muted);
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .map-placeholder a {
+    color: var(--red); text-decoration: none; font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .map-placeholder a:hover { opacity: 0.75; }
+
+  /* FOOTER */
+  footer {
+    background: var(--near-black); border-top: 1px solid var(--border);
+    padding: 4rem 3rem 2rem;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+  .footer-logo {
+    font-family: var(--serif); font-size: 1.6rem; font-weight: 300;
+    color: var(--text); margin-bottom: 1rem;
+  }
+  .footer-logo span { color: var(--red); font-style: italic; }
+  .footer-about { font-size: 0.875rem; color: var(--muted); line-height: 1.7; max-width: 280px; }
+  .footer-heading {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 1.25rem;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 0.6rem; }
+  .footer-links a {
+    color: var(--muted); text-decoration: none; font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+  .footer-bottom {
+    border-top: 1px solid var(--border); padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy { font-size: 0.8rem; color: var(--muted); }
+  .footer-socials { display: flex; gap: 1rem; }
+  .social-link {
+    width: 36px; height: 36px; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); text-decoration: none; font-size: 0.8rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-link:hover { border-color: var(--red); color: var(--red); }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--dark-2); border: 1px solid var(--border);
+    padding: 1rem 1.5rem; z-index: 999; max-width: 320px;
+    transform: translateY(100px); opacity: 0; transition: all 0.3s;
+    font-size: 0.875rem;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.success { border-left: 3px solid #4CAF50; }
+  .toast.error { border-left: 3px solid var(--red); }
+
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .services-grid { grid-template-columns: 1fr; }
+    .booking-layout { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .location-layout { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:first-child { grid-column: span 1; aspect-ratio: 4/3; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-badge">KSS</div>
+    Kileleshwa <em style="font-style:italic;opacity:0.7;margin-left:4px">Super Shine</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Kileleshwa, Nairobi &bull; Est. 2015</div>
+    <h1>Where Your Car<br>Gets Its <em>Shine</em> Back</h1>
+    <p class="hero-sub">Nairobi's premier car detailing centre — professional hand washing, deep cleaning, engine steam, polishing & more. Your vehicle deserves the best.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">Book a Service</a>
+      <a href="#pricing" class="btn-outline">View Pricing</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat fade-up">
+    <div class="stat-num">500<span style="font-size:1.5rem">+</span></div>
+    <div class="stat-label">Cars Washed Monthly</div>
+  </div>
+  <div class="stat fade-up">
+    <div class="stat-num">10<span style="font-size:1.5rem">+</span></div>
+    <div class="stat-label">Years of Excellence</div>
+  </div>
+  <div class="stat fade-up">
+    <div class="stat-num">18</div>
+    <div class="stat-label">Services Offered</div>
+  </div>
+  <div class="stat fade-up">
+    <div class="stat-num">98<span style="font-size:1.5rem">%</span></div>
+    <div class="stat-label">Customer Satisfaction</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-title">Expert <em>Detailing</em> for Every Vehicle</h2>
+      <p class="section-desc">From a quick body wash to a full executive detail, our trained team restores your car to showroom condition.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <span class="service-icon">🚿</span>
+        <h3 class="service-name">Body Wash</h3>
+        <p class="service-desc">Thorough exterior hand wash removing road grime, dust, and contaminants. Available for saloons and 4x4s.</p>
+        <div class="service-price">
+          <span class="price-from">From</span>
+          <span class="price-val">KSh 300</span>
+          <span class="price-unit">/ saloon</span>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">⚙️</span>
+        <h3 class="service-name">Engine Steam Wash</h3>
+        <p class="service-desc">High-pressure steam cleans your engine bay safely, removing grease, oil, and road debris.</p>
+        <div class="service-price">
+          <span class="price-from">From</span>
+          <span class="price-val">KSh 1,500</span>
+          <span class="price-unit">/ saloon</span>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">✨</span>
+        <h3 class="service-name">Executive Wash</h3>
+        <p class="service-desc">Full interior & exterior detailing including vacuuming, leather care, dashboard shine, and exterior polish.</p>
+        <div class="service-price">
+          <span class="price-from">From</span>
+          <span class="price-val">KSh 2,000</span>
+          <span class="price-unit">/ saloon simple</span>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">💎</span>
+        <h3 class="service-name">Machine Polish</h3>
+        <p class="service-desc">Professional orbital machine polishing to remove swirl marks, scratches, and restore deep gloss.</p>
+        <div class="service-price">
+          <span class="price-from">From</span>
+          <span class="price-val">KSh 1,500</span>
+          <span class="price-unit">/ vehicle</span>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">🔵</span>
+        <h3 class="service-name">Under Wash Restoration</h3>
+        <p class="service-desc">High-pressure underbody cleaning removing mud, salt, and corrosives that damage chassis components.</p>
+        <div class="service-price">
+          <span class="price-from">From</span>
+          <span class="price-val">KSh 3,000</span>
+          <span class="price-unit">/ saloon</span>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">❄️</span>
+        <h3 class="service-name">Air-Con Refill</h3>
+        <p class="service-desc">A/C refrigerant top-up to restore your vehicle's cooling to peak performance. Leak checks available.</p>
+        <div class="service-price">
+          <span class="price-from">From</span>
+          <span class="price-val">KSh 4,000</span>
+          <span class="price-unit">/ saloon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag">Transparent Pricing</span>
+      <h2 class="section-title">Full <em>Price List</em></h2>
+      <p class="section-desc">All prices in Kenyan Shillings. 4x4/SUV rates apply to larger vehicles.</p>
+    </div>
+    <div class="fade-up" style="overflow-x:auto;">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Saloon</th>
+            <th>4x4 / SUV</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3" class="pricing-cat">Wash Services</td></tr>
+          <tr><td>Body Wash</td><td class="price-ksh">300</td><td class="price-ksh">400</td></tr>
+          <tr><td>Engine Steam Wash</td><td class="price-ksh">1,500</td><td class="price-ksh">1,800</td></tr>
+          <tr><td>Under Wash Restoration</td><td class="price-ksh">3,000</td><td class="price-ksh">4,000</td></tr>
+
+          <tr><td colspan="3" class="pricing-cat">Interior Cleaning</td></tr>
+          <tr><td>Vacuum (Wet)</td><td class="price-ksh" colspan="2">2,000</td></tr>
+          <tr><td>Vacuum (Dry)</td><td class="price-ksh" colspan="2">400</td></tr>
+          <tr><td>Vacuum & Shampoo (4x4/SUV)</td><td class="na">—</td><td class="price-ksh">2,500</td></tr>
+          <tr><td>Leather Care Cleaner</td><td class="price-ksh">400</td><td class="price-ksh">500</td></tr>
+          <tr><td>Dashboard Shine</td><td class="price-ksh">400</td><td class="price-ksh">500</td></tr>
+
+          <tr><td colspan="3" class="pricing-cat">Paint & Exterior</td></tr>
+          <tr><td>Polish</td><td class="price-ksh">400</td><td class="price-ksh">500</td></tr>
+          <tr><td>Machine Polish</td><td class="price-ksh">1,500</td><td class="price-ksh">1,500</td></tr>
+          <tr><td>Buffing</td><td class="price-ksh">4,000</td><td class="price-ksh">5,000</td></tr>
+          <tr><td>Watermarks Removal</td><td class="price-ksh" colspan="2">2,500</td></tr>
+          <tr><td>Rims</td><td class="price-ksh" colspan="2">3,000</td></tr>
+          <tr><td>Headlights Restoration</td><td class="price-ksh" colspan="2">2,000</td></tr>
+          <tr><td>Plastic Restoration</td><td class="price-ksh" colspan="2">4,000</td></tr>
+
+          <tr><td colspan="3" class="pricing-cat">Executive Packages</td></tr>
+          <tr><td>Executive Wash — 4x4/SUV (Full)</td><td class="na">—</td><td class="price-ksh">5,000</td></tr>
+          <tr><td>Executive Wash — 4x4/SUV (Simple)</td><td class="na">—</td><td class="price-ksh">3,000</td></tr>
+          <tr><td>Executive Wash — Saloon (Detailed)</td><td class="price-ksh">4,000</td><td class="na">—</td></tr>
+          <tr><td>Executive Wash — Saloon (Simple)</td><td class="price-ksh">2,000</td><td class="na">—</td></tr>
+
+          <tr><td colspan="3" class="pricing-cat">Other Services</td></tr>
+          <tr><td>Air-Con Refill</td><td class="price-ksh">4,000</td><td class="price-ksh">5,000</td></tr>
+          <tr><td>Automated Carpet Washing Machine</td><td class="price-ksh" colspan="2">Available</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag">Our Work</span>
+      <h2 class="section-title">The <em>Results</em> Speak</h2>
+    </div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="gallery-placeholder-icon">🚗</span>
+          Executive Detail
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="gallery-placeholder-icon">✨</span>
+          Paint Polish
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="gallery-placeholder-icon">💎</span>
+          Engine Bay
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="gallery-placeholder-icon">🔵</span>
+          Interior Shampoo
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <span class="gallery-placeholder-icon">🏎️</span>
+          Machine Buff
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--muted);text-align:center;">Gallery images coming soon. Follow us on Instagram for the latest results.</p>
+  </div>
+</section>
+
+<!-- BOOKING + AI -->
+<section id="booking">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag">Reservations</span>
+      <h2 class="section-title">Book Your <em>Appointment</em></h2>
+      <p class="section-desc">Reserve your slot online, or ask our AI assistant anything about our services.</p>
+    </div>
+    <div class="booking-layout">
+      <!-- Booking Form -->
+      <div class="fade-up">
+        <div class="booking-form-wrap">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="fname" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lname" placeholder="Kamau">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="+254 7XX XXX XXX">
+          </div>
+          <div class="form-group">
+            <label>Vehicle Type</label>
+            <select id="vehicle">
+              <option value="">Select vehicle type</option>
+              <option>Saloon / Sedan</option>
+              <option>4x4 / SUV</option>
+              <option>Van / Minibus</option>
+              <option>Truck / Commercial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Service</label>
+            <select id="service">
+              <option value="">Select a service</option>
+              <option>Body Wash</option>
+              <option>Engine Steam Wash</option>
+              <option>Under Wash Restoration</option>
+              <option>Executive Wash — Simple</option>
+              <option>Executive Wash — Detailed / Full</option>
+              <option>Machine Polish</option>
+              <option>Buffing</option>
+              <option>Air-Con Refill</option>
+              <option>Vacuum & Shampoo</option>
+              <option>Headlights Restoration</option>
+              <option>Multiple Services (specify in notes)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Date & Time</label>
+            <input type="datetime-local" id="datetime">
+          </div>
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea id="notes" placeholder="Any special requests or vehicle concerns..."></textarea>
+          </div>
+          <button class="submit-btn" id="submitBtn" onclick="submitBooking()">Confirm Booking</button>
+        </div>
+      </div>
+
+      <!-- AI Chat -->
+      <div class="ai-panel fade-up">
+        <div class="ai-header">
+          <div class="ai-dot"></div>
+          <div>
+            <div class="ai-title">Shine Assistant</div>
+            <div class="ai-sub">Ask about services, pricing, or care tips</div>
+          </div>
+        </div>
+        <div class="ai-messages" id="chatMessages">
+          <div class="msg bot">
+            <div class="msg-avatar">KSS</div>
+            <div class="msg-bubble">Hello! I'm the Kileleshwa Super Shine assistant. I can help you choose the right service, explain our pricing, or give car care tips. What would you like to know?</div>
+          </div>
+        </div>
+        <div class="ai-input-row">
+          <input type="text" class="ai-input" id="chatInput" placeholder="e.g. What's the best service for my Land Cruiser?" onkeydown="if(event.key==='Enter')sendChat()">
+          <button class="ai-send" id="sendBtn" onclick="sendChat()">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <span class="section-tag">Client Reviews</span>
+      <h2 class="section-title">What Our <em>Clients</em> Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The executive wash on my Prado was absolutely flawless. Inside and out — it looked better than the day I bought it."</p>
+        <div class="testimonial-author">
+          <strong>James Mwangi</strong>
+          Toyota Land Cruiser Prado
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Brought in a very dusty Subaru after a long Naivasha trip. The machine polish made the paint glow. I'll be a regular customer."</p>
+        <div class="testimonial-author">
+          <strong>Amina Hassan</strong>
+          Subaru Forester
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The team is professional, fast, and thorough. The under wash got rid of all the mud from Ngong Road. Highly recommend!"</p>
+        <div class="testimonial-author">
+          <strong>Brian Ochieng</strong>
+          Mitsubishi Pajero
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="section-inner">
+    <div class="location-layout">
+      <div class="fade-up">
+        <span class="section-tag">Find Us</span>
+        <h2 class="section-title" style="margin-bottom:2.5rem;">Visit Our <em>Centre</em></h2>
+        <div class="location-detail">
+          <div class="location-icon">📍</div>
+          <div>
+            <div class="location-detail-label">Address</div>
+            <div class="location-detail-val">Kileleshwa, Nairobi<br>Next to Kileleshwa shopping centre<br>Off Kileleshwa Road</div>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-icon">🕐</div>
+          <div>
+            <div class="location-detail-label">Opening Hours</div>
+            <div class="location-detail-val">Monday – Saturday: 7:00 AM – 7:00 PM<br>Sunday: 8:00 AM – 5:00 PM</div>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-icon">📞</div>
+          <div>
+            <div class="location-detail-label">Phone</div>
+            <div class="location-detail-val"><a href="tel:+254700000000" style="color:var(--red);text-decoration:none;">+254 700 000 000</a></div>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-icon">📸</div>
+          <div>
+            <div class="location-detail-label">Instagram</div>
+            <div class="location-detail-val"><a href="https://instagram.com/kileleshwasupershine" target="_blank" style="color:var(--red);text-decoration:none;">@kileleshwasupershine</a></div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Kileleshwa+Nairobi" target="_blank" class="btn-primary" style="display:inline-block;margin-top:1rem;">Get Directions →</a>
+      </div>
+      <div class="map-placeholder fade-up">
+        <span style="font-size:2.5rem;">📍</span>
+        <span>Kileleshwa, Nairobi</span>
+        <a href="https://maps.google.com/?q=Kileleshwa+Nairobi" target="_blank">Open in Google Maps →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Kileleshwa <span>Super Shine</span></div>
+        <p class="footer-about">Nairobi's trusted car detailing centre. Professional hand washing, polishing, steam cleaning and full detailing services for all vehicles.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="#pricing">Body Wash</a></li>
+          <li><a href="#pricing">Executive Wash</a></li>
+          <li><a href="#pricing">Machine Polish</a></li>
+          <li><a href="#pricing">Engine Steam Wash</a></li>
+          <li><a href="#pricing">Air-Con Refill</a></li>
+          <li><a href="#pricing">All Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Kileleshwa Super Shine Detailing Centre. All rights reserved.</div>
+      <div class="footer-socials">
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">fb</a>
+        <a href="#" class="social-link">wa</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// TOAST
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(() => { t.className = 'toast'; }, 4000);
+}
+
+// BOOKING SUBMIT
+function submitBooking() {
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const vehicle = document.getElementById('vehicle').value;
+  const service = document.getElementById('service').value;
+  const dt = document.getElementById('datetime').value;
+  if (!fname || !lname || !phone || !vehicle || !service || !dt) {
+    showToast('Please fill in all required fields.', 'error'); return;
+  }
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = 'Submitting...';
+  // Simulate API submission
+  setTimeout(() => {
+    showToast(`✓ Booking confirmed for ${fname}! We'll call you at ${phone} to confirm.`);
+    btn.disabled = false; btn.textContent = 'Confirm Booking';
+    document.getElementById('fname').value = '';
+    document.getElementById('lname').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('vehicle').value = '';
+    document.getElementById('service').value = '';
+    document.getElementById('datetime').value = '';
+    document.getElementById('notes').value = '';
+  }, 1500);
+}
+
+// AI CHAT
+const SYSTEM_PROMPT = `You are a friendly and knowledgeable assistant for Kileleshwa Super Shine, a professional car wash and detailing centre in Kileleshwa, Nairobi, Kenya.
+
+Services and pricing (KES):
+- Body Wash: Saloon 300, 4x4/SUV 400
+- Engine Steam Wash: Saloon 1500, 4x4/SUV 1800
+- Under Wash Restoration: Saloon 3000, 4x4/SUV 4000
+- Vacuum Wet: 2000 | Vacuum Dry: 400
+- Vacuum & Shampoo (4x4/SUV): 2500
+- Leather Care Cleaner: Saloon 400, 4x4/SUV 500
+- Dashboard Shine: Saloon 400, 4x4/SUV 500
+- Polish: Saloon 400, 4x4/SUV 500
+- Machine Polish: 1500 all vehicles
+- Buffing: Saloon 4000, 4x4/SUV 5000
+- Air-Con Refill: Saloon 4000, 4x4/SUV 5000
+- Watermarks Removal: 2500
+- Rims: 3000
+- Headlights Restoration: 2000
+- Plastic Restoration: 4000
+- Executive Wash 4x4 Full: 5000 | Simple: 3000
+- Executive Wash Saloon Detailed: 4000 | Simple: 2000
+- Automated Carpet Washing Machine: available
+
+Hours: Mon-Sat 7am-7pm, Sun 8am-5pm
+Location: Kileleshwa, Nairobi
+
+Be warm, concise, helpful. Recommend the right service based on the customer's vehicle and needs. Keep answers under 3 sentences unless more detail is needed. If asked about booking, direct them to the booking form on the page.`;
+
+let chatHistory = [];
+
+async function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  addMessage('user', msg);
+  input.value = '';
+  document.getElementById('sendBtn').disabled = true;
+
+  const typing = addTyping();
+
+  chatHistory.push({ role: 'user', content: msg });
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 300,
+        system: SYSTEM_PROMPT,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    const reply = data.content && data.content[0] ? data.content[0].text : "I'm sorry, I couldn't process that. Please try again.";
+    chatHistory.push({ role: 'assistant', content: reply });
+    typing.remove();
+    addMessage('bot', reply);
+  } catch (err) {
+    typing.remove();
+    addMessage('bot', "Sorry, I'm having trouble connecting right now. Please call us directly or use the booking form!");
+  }
+  document.getElementById('sendBtn').disabled = false;
+}
+
+function addMessage(role, text) {
+  const box = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `msg ${role === 'user' ? 'user' : 'bot'}`;
+  div.innerHTML = `
+    <div class="msg-avatar">${role === 'user' ? 'You' : 'KSS'}</div>
+    <div class="msg-bubble">${text.replace(/\n/g,'<br>')}</div>
+  `;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const box = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+  div.innerHTML = `
+    <div class="msg-avatar">KSS</div>
+    <div class="msg-bubble"><div class="typing-indicator"><span></span><span></span><span></span></div></div>
+  `;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+  return div;
+}
+</script>
+</body>
+</html>
